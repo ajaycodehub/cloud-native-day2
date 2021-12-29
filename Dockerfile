@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com/dotnet/aspnet:6.0-focal AS base
+FROM mcr.microsoft.com/dotnet/aspnet:5.0-focal AS base
 WORKDIR /app
 EXPOSE 5000
 
@@ -9,18 +9,18 @@ ENV ASPNETCORE_URLS=http://+:5000
 RUN adduser -u 5678 --disabled-password --gecos "" appuser && chown -R appuser /app
 USER appuser
 
-FROM mcr.microsoft.com/dotnet/sdk:6.0-focal AS build
+FROM mcr.microsoft.com/dotnet/sdk:5.0-focal AS build
 WORKDIR /src
-COPY ["cloud-native-day2.csproj", "./"]
-RUN dotnet restore "myapp/cloud-native-day2/cloud-native-day2.csproj"
+COPY ["k8sapp01.csproj", "./"]
+RUN dotnet restore "k8sapp01.csproj"
 COPY . .
-WORKDIR "cloud-native-day2"
-RUN dotnet build "cloud-native-day2.csproj" -c Release -o /app/build
+WORKDIR "/src/."
+RUN dotnet build "k8sapp01.csproj" -c Release -o /app/build
 
 FROM build AS publish
-RUN dotnet publish "cloud-native-day2.csproj" -c Release -o /app/publish
+RUN dotnet publish "k8sapp01.csproj" -c Release -o /app/publish
 
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
-ENTRYPOINT ["dotnet", "cloud-native-day2.dll"]
+ENTRYPOINT ["dotnet", "k8sapp01.dll"]
