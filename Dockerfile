@@ -11,10 +11,10 @@ USER appuser
 
 FROM mcr.microsoft.com/dotnet/sdk:6.0-focal AS build
 WORKDIR /src
-COPY ["myapp/cloud-native-day2/cloud-native-day2.csproj", "myapp/cloud-native-day2/"]
+COPY ["cloud-native-day2.csproj", "./"]
 RUN dotnet restore "myapp/cloud-native-day2/cloud-native-day2.csproj"
 COPY . .
-WORKDIR "/src/myapp/cloud-native-day2"
+WORKDIR "cloud-native-day2"
 RUN dotnet build "cloud-native-day2.csproj" -c Release -o /app/build
 
 FROM build AS publish
