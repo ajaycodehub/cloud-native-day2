@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "5JujIM7nu9hfXqP3DHarVF8R7cBjPOSPlhHaElKKw5OHTDlX47EF9dMlIOPX4T/dQaHYeY1y9I3B23GFvI02rA==",
+  "success": true,
+  "projectFilePath": "/Users/ajaykumarsingh/cloudnative-2/myapp/cloud-native-day2/cloud-native-day2.csproj",
+  "expectedPackageFiles": [
+    "/Users/ajaykumarsingh/.nuget/packages/microsoft.extensions.apidescription.server/3.0.0/microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
+    "/Users/ajaykumarsingh/.nuget/packages/microsoft.openapi/1.2.3/microsoft.openapi.1.2.3.nupkg.sha512",
+    "/Users/ajaykumarsingh/.nuget/packages/swashbuckle.aspnetcore/6.2.3/swashbuckle.aspnetcore.6.2.3.nupkg.sha512",
+    "/Users/ajaykumarsingh/.nuget/packages/swashbuckle.aspnetcore.swagger/6.2.3/swashbuckle.aspnetcore.swagger.6.2.3.nupkg.sha512",
+    "/Users/ajaykumarsingh/.nuget/packages/swashbuckle.aspnetcore.swaggergen/6.2.3/swashbuckle.aspnetcore.swaggergen.6.2.3.nupkg.sha512",
+    "/Users/ajaykumarsingh/.nuget/packages/swashbuckle.aspnetcore.swaggerui/6.2.3/swashbuckle.aspnetcore.swaggerui.6.2.3.nupkg.sha512"
+  ],
+  "logs": []
+}
