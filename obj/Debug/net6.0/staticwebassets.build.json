@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "2dlyKLh1Amw4sYb0V6dDi1Die9G3BwF6xh1bzizIEGg=",
+  "Source": "cloud-native-day2",
+  "BasePath": "_content/cloud-native-day2",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
