@@ -11,16 +11,16 @@ USER appuser
 
 FROM mcr.microsoft.com/dotnet/sdk:5.0-focal AS build
 WORKDIR /src
-COPY ["k8sapp01.csproj", "./"]
-RUN dotnet restore "k8sapp01.csproj"
+COPY ["cloud_native_day2.csproj", "./"]
+RUN dotnet restore "cloud_native_day2.csproj"
 COPY . .
 WORKDIR "/src/."
-RUN dotnet build "k8sapp01.csproj" -c Release -o /app/build
+RUN dotnet build "cloud_native_day2.csproj" -c Release -o /app/build
 
 FROM build AS publish
-RUN dotnet publish "k8sapp01.csproj" -c Release -o /app/publish
+RUN dotnet publish "cloud_native_day2.csproj" -c Release -o /app/publish
 
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
-ENTRYPOINT ["dotnet", "k8sapp01.dll"]
+ENTRYPOINT ["dotnet", "cloud_native_day2.dll"]
