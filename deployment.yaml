@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ajapp01
+spec:
+  selector:
+    matchLabels:
+      app: ajapp01-pod
+  template:
+    metadata:
+      labels:
+        app: ajapp01-pod
+    spec:
+      containers:
+      - name: ajapp01-container
+        image: barclaysacr02.azurecr.io/ajapp01:latest
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 5000
