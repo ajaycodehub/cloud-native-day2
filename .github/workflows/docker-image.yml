@@ -28,7 +28,7 @@ jobs:
         login-server: barclaysacr02.azurecr.io
         
     - name: Push the Docker image
-      run: docker push barclaysacr02.azurecr.io/k8sapp01:latest
+      run: docker push barclaysacr02.azurecr.io/ajapp01:latest
     
   deploy:
     runs-on: ubuntu-latest
